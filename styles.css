@@ -1,7 +1,7 @@
 :root {
     background-color: #ecf5ff;
     font-size: 62.5%;
-    /* root font size (rem) will be 10px */
+    /* root font size (1 rem) will be 10px */
 }
 
 *{
@@ -40,4 +40,15 @@ h2 {
 h3 {
     font-size: 2.8rem;
     font-weight: 500;
+}
+
+/* Utilities */
+.container {
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* JC: Aligns items horizontally */
+    align-items: center;
+    /* AI: Aligns items vertically */
 }
