@@ -92,6 +92,7 @@ h3 {
     border: 0.1rem solid #56a5eb;
     margin-bottom: 1rem;
     text-decoration: none;
+    /* Anchor tags are underlined by default */
     color: #56a5eb;
     background-color: white;
   }
