@@ -23,5 +23,6 @@ transition: transform 150ms;
 
 /* Pads text inside white choice container */
 .choice-text{
-padding:1.5rem
+padding:1.5rem;
+width: 100%;
 }
