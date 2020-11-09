@@ -57,6 +57,12 @@ getNewQuestion = () => {
     //Grabs a random question based on # of Qs left in availableQuestions array
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number'];
+        // Looks at data-number in each answer choice
+        choice.innerText = currentQuestion['choice' + number];
+    });
 };
 
 startGame();
