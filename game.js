@@ -1,5 +1,5 @@
 const question = document.getElementById("question");
-const choices = Array.from(document.getElementById("choice-text"));
+const choices = Array.from(document.getElementsByClassName("choice-text"));
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -34,5 +34,32 @@ let questions =
             "answer": 4
         }
     ];
-]
+
+//CONSTANTS
+const CORRECT_BONUS = 10;
+// Value added to score when answering correctly
+const MAX_QUESTIONS = 3;
+//Max number of Qs a user gets before game ends.
+
+startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    //By using the spread operator, making changes to either of these
+    //won't affect the other like in availableQuestions = questions;
+    console.log(availableQuestions);
+    getNewQuestion();
+};
+
+getNewQuestion = () => {
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    //Grabs a random question based on # of Qs left in availableQuestions array
+    currentQuestion = availableQuestions[questionIndex];
+    question.innerText = currentQuestion.question;
+};
+
+startGame();
+
+
 
