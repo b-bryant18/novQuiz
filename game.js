@@ -82,7 +82,12 @@ choices.forEach(choice => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer, currentQuestion.answer);
+
+        //Sets default to 'incorrect', if correct answer is chosen, updates to 'correct';
+        const classToApply = 'incorrect';
+        if (selectedAnswer == currentQuestion.answer) {
+            classToApply = 'correct';
+        }
         getNewQuestion();
     })
 });
