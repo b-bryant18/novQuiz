@@ -59,6 +59,9 @@ getNewQuestion = () => {
         return window.location.assign("./end.html");
     }
     questionCounter++;
+    // Updates the HUD text telling user which question they're on
+    questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
+
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     //Grabs a random question based on # of Qs left in availableQuestions array
     currentQuestion = availableQuestions[questionIndex];
