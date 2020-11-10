@@ -81,13 +81,15 @@ choices.forEach(choice => {
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset["number"];
+        const selectedAnswer = selectedChoice.dataset['number'];
 
         //Sets default to 'incorrect', if correct answer is chosen, updates to 'correct';
-        const classToApply = 'incorrect';
+        let classToApply = 'incorrect';
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = 'correct';
         }
+        console.log(classToApply);
+
         getNewQuestion();
     })
 });
