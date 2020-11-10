@@ -88,7 +88,9 @@ choices.forEach(choice => {
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = 'correct';
         }
-        console.log(classToApply);
+
+        selectedChoice.parentElement.classList.add(classToApply);
+        selectedChoice.parentElement.classList.remove(classToApply);
 
         getNewQuestion();
     })
