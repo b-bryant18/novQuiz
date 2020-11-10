@@ -89,11 +89,16 @@ choices.forEach(choice => {
             classToApply = 'correct';
         }
 
+        // Adds correct/incorrect class to selected Choice
+        //Correct class = green, incorrect class = red in game.css
         selectedChoice.parentElement.classList.add(classToApply);
-        selectedChoice.parentElement.classList.remove(classToApply);
 
-        getNewQuestion();
-    })
+        //Removes classToApply (correct/incorrect) after 1 second
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion();
+        }, 1000);
+    });
 });
 
 startGame();
