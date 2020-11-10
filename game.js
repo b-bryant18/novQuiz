@@ -47,7 +47,6 @@ startGame = () => {
     availableQuestions = [...questions];
     //By using the spread operator, making changes to either of these
     //won't affect the other like in availableQuestions = questions;
-    console.log(availableQuestions);
     getNewQuestion();
 };
 
@@ -83,7 +82,7 @@ choices.forEach(choice => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer);
+        console.log(selectedAnswer, currentQuestion.answer);
         getNewQuestion();
     })
 });
