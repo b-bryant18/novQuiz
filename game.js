@@ -94,6 +94,12 @@ choices.forEach(choice => {
             classToApply = 'correct';
         }
 
+        //Checks if answer was correct before running incrementScore function
+        if (classToApply === 'correct') {
+            incrementScore(CORRECT_BONUS);
+            //Passes in CORRECT_BONUS value as num in incrementScore function
+        }
+
         // Adds correct/incorrect class to selected Choice
         //Correct class = green, incorrect class = red in game.css
         selectedChoice.parentElement.classList.add(classToApply);
@@ -105,6 +111,13 @@ choices.forEach(choice => {
         }, 1000);
     });
 });
+
+//Increases score for correct answers
+//CORRECT_BONUS is passed in as num
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+};
 
 startGame();
 
