@@ -47,8 +47,8 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-    //By using the spread operator, making changes to either of these
-    //won't affect the other like in availableQuestions = questions;
+    //By using the spread operator, making changes to either of these variables
+    //won't affect the other ie: availableQuestions = questions;
     getNewQuestion();
 };
 
@@ -62,9 +62,10 @@ getNewQuestion = () => {
     // Updates the HUD text telling user which question they're on
     questionCounterText.innerText = `${questionCounter}/${MAX_QUESTIONS}`;
 
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     //Grabs a random question based on # of Qs left in availableQuestions array
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
+    //Updates question text based on what Q the user is currently on
     question.innerText = currentQuestion.question;
 
     //Populates answer choices w/ currentQuestion
@@ -75,6 +76,7 @@ getNewQuestion = () => {
     });
 
     //Remove answered question from availableQuestions array
+    //1 means remove 1 item
     availableQuestions.splice(questionIndex, 1);
 
     acceptingAnswers = true;
@@ -100,7 +102,7 @@ choices.forEach(choice => {
             //Passes in CORRECT_BONUS value as num in incrementScore function
         }
 
-        // Adds correct/incorrect class to selected Choice
+        // Adds correct/incorrect class to selectedChoice
         //Correct class = green, incorrect class = red in game.css
         selectedChoice.parentElement.classList.add(classToApply);
 
@@ -115,7 +117,9 @@ choices.forEach(choice => {
 //Increases score for correct answers
 //CORRECT_BONUS is passed in as num
 incrementScore = num => {
+    //let score = score + num
     score += num;
+    //Update score text as score increases
     scoreText.innerText = score;
 };
 
