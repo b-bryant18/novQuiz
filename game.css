@@ -50,3 +50,12 @@ width: 100%;
 .hud-main-text {
     text-align: center;
 }
+
+/* Outer box */
+#progressBar {
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #56a5eb;
+}
+
+/* Inner bar */
