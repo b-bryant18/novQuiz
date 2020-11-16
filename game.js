@@ -61,6 +61,11 @@ getNewQuestion = () => {
     questionCounter++;
     // Updates the HUD text telling user which question they're on
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    console.log(questionCounter / MAX_QUESTIONS * 100);
+
+    // Update progress bar
+    progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
+    //Turns expression into a % of the progress bar that should be styled. 
 
     //Grabs a random question based on # of Qs left in availableQuestions array
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
