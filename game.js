@@ -54,13 +54,18 @@ startGame = () => {
 
 getNewQuestion = () => {
 
+    //Save score & End game
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        //Checks if any Qs are left or max num of Qs has been answered
+        localStorage.setItem('mostRecentScore', score);
         // Go to the game over page
         return window.location.assign("./end.html");
     }
+    //Move to next question
     questionCounter++;
-    // Updates the HUD text telling user which question they're on
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+    // Updates the HUD text telling user which question they're on
+
 
     // Update progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
@@ -94,7 +99,7 @@ choices.forEach(choice => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
-        //Sets default to 'incorrect', if correct answer is chosen, updates to 'correct';
+        //Sets default class to 'incorrect'. If correct answer is chosen, updates to 'correct';
         let classToApply = 'incorrect';
         if (selectedAnswer == currentQuestion.answer) {
             classToApply = 'correct';
@@ -107,8 +112,8 @@ choices.forEach(choice => {
         }
 
         // Adds correct/incorrect class to selectedChoice
-        //Correct class = green, incorrect class = red in game.css
         selectedChoice.parentElement.classList.add(classToApply);
+        //Correct class = green, incorrect class = red in game.css
 
         //Removes classToApply (correct/incorrect) after 1 second
         setTimeout(() => {
