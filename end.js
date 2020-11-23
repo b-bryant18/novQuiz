@@ -2,15 +2,17 @@ const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("saveScoreBtn");
 const finalScore = document.getElementById("finalScore");
 const mostRecentScore = localStorage.getItem('mostRecentScore');
-finalScore.innerText = mostRecentScore;
 
 //Retrieve highScores from LS or retrieve empty array if no scores
 const highScores = JSON.parse(localStorage.getItem("highscores")) || [];
-console.log(highScores);
 //localStorage saves items as strings by default
 //Use JSON.parse to turn string into object when getting items from LS
 
+//Limit num of scores saved to array
 const MAX_HIGH_SCORES = 5;
+
+//Displays final score
+finalScore.innerText = mostRecentScore;
 
 //Save button disabled unless username is entered
 username.addEventListener("keyup", () => {
@@ -23,7 +25,7 @@ saveHighScore = (e) => {
     e.preventDefault();
 
     const score = {
-        score: mostRecentScore,
+        score: Math.floor(Math.random() * 100),
         name: username.value
     };
 
@@ -42,4 +44,8 @@ saveHighScore = (e) => {
     //Use JSON.stringify to turn objects into strings when setting items to LS
 
     console.log(highScores);
+
+
+    //Return to home page
+    window.location.assign('/');
 };
