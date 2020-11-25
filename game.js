@@ -28,6 +28,7 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple")
             answerChoices.splice(formattedQuestion.answer - 1, 0,
                 loadedQuestion.correct_answer);
 
+            // Iterates thru answerChoices & assigns index for each answer choice
             answerChoices.forEach((choice, index) => {
                 formattedQuestion["choice" + (index + 1)] = choice;
             });
