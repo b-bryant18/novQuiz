@@ -13,7 +13,13 @@ let questions = [];
 
 fetch("questions.json")
     .then(res => {
-        console.log(res)
+        return res.json();
+    }).then(loadedQuestions => {
+        console.log(loadedQuestions)
+        questions = loadedQuestions;
+        startGame();
+    }).catch(err => {
+        console.log(err);
     });
 
 //CONSTANTS
@@ -110,8 +116,6 @@ incrementScore = num => {
     //Update score text as score increases
     scoreText.innerText = score;
 };
-
-startGame();
 
 
 
