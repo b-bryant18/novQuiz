@@ -11,11 +11,13 @@ let availableQuestions = [];
 
 let questions = [];
 
-fetch("questions.json")
+//Fetch questions from questions.json
+fetch("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple")
     .then(res => {
         return res.json();
-    }).then(loadedQuestions => {
-        console.log(loadedQuestions)
+    })
+    .then(loadedQuestions => {
+        console.log(loadedQuestions.results)
         questions = loadedQuestions;
         startGame();
     }).catch(err => {
@@ -116,6 +118,7 @@ incrementScore = num => {
     //Update score text as score increases
     scoreText.innerText = score;
 };
+
 
 
 
