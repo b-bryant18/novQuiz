@@ -10,4 +10,6 @@ highScoresList.innerHTML =
         .join("");
 
 //A new li is created for each object in the highScores array
-//.map creates a new array by calling a specified function on each element in the parent array
+
+//.map creates a new array by calling a specified function on
+// each element in the parent array
