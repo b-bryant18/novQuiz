@@ -65,3 +65,12 @@ height: 3.4rem;
 background-color: #56a5eb;
 width: 0%;
 }
+
+/* Loader */
+#loader {
+    border: 1.6rem solid white;
+    border-radius: 50%;
+    border-top: 1.6rem solid #56a5eb;
+    width: 12rem;
+    height: 12rem;
+}
