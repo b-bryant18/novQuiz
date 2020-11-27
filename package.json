@@ -1,0 +1,20 @@
+{
+  "name": "novQuiz",
+  "version": "1.0.0",
+  "description": "Quiz game built using James Quick's tutorial on YouTube",
+  "main": "end.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-bryant18/novQuiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b-bryant18/novQuiz/issues"
+  },
+  "homepage": "https://github.com/b-bryant18/novQuiz#readme"
+}
