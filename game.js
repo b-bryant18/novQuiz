@@ -37,9 +37,6 @@ fetch("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple")
 
             return formattedQuestion;
         });
-        // Displays loader and hides loader
-        game.classList.remove("hidden");
-        loader.classList.add("hidden");
         startGame();
     })
     .catch(err => {
@@ -59,6 +56,9 @@ startGame = () => {
     //By using the spread operator, making changes to either of these variables
     //won't affect the other ie: availableQuestions = questions;
     getNewQuestion();
+    // Displays game and hides loader
+    game.classList.remove("hidden");
+    loader.classList.add("hidden");
 };
 
 getNewQuestion = () => {
