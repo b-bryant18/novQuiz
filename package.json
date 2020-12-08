@@ -1,5 +1,5 @@
 {
-  "name": "novQuiz",
+  "name": "novquiz",
   "version": "1.0.0",
   "description": "Quiz game built using James Quick's tutorial on YouTube",
   "main": "end.js",
